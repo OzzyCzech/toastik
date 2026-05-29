@@ -1,4 +1,4 @@
-# Toastik
+# 🍞 Toastik
 
 A lightweight, dependency-free toast notification component for **Vue 3**, styled with **Tailwind CSS 4**.
 Stacked toasts, swipe-to-dismiss, auto-dismiss, six positions, dark mode, and inlined SVG icons — no icon library required.
