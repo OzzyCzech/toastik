@@ -1,0 +1,45 @@
+{
+	"name": "toastik",
+	"version": "0.1.0",
+	"description": "A lightweight, dependency-free toast notification component for Vue 3 with Tailwind 4 styling.",
+	"type": "module",
+	"license": "MIT",
+	"author": "Roman Ožana <roman@ozana.cz>",
+	"homepage": "https://github.com/OzzyCzech/toastik",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/OzzyCzech/toastik.git"
+	},
+	"keywords": ["vue", "vue3", "toast", "notification", "tailwind", "tailwindcss", "snackbar"],
+	"files": ["dist"],
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		},
+		"./style.css": "./dist/toastik.css"
+	},
+	"sideEffects": ["**/*.css"],
+	"scripts": {
+		"dev": "vite",
+		"build": "vue-tsc --noEmit && vite build",
+		"type-check": "vue-tsc --noEmit",
+		"preview": "vite preview"
+	},
+	"peerDependencies": {
+		"vue": "^3.5.0"
+	},
+	"devDependencies": {
+		"@tailwindcss/vite": "^4.1.0",
+		"@vitejs/plugin-vue": "^6.0.0",
+		"tailwindcss": "^4.1.0",
+		"typescript": "^5.7.0",
+		"vite": "^7.0.0",
+		"vite-plugin-dts": "^4.5.0",
+		"vue": "^3.5.0",
+		"vue-tsc": "^2.2.0"
+	}
+}
