@@ -77,4 +77,4 @@ npm run build    # build the library into dist/
 
 ## License
 
-MIT
+[MIT](LICENSE) © Roman Ožana
