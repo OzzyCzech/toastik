@@ -28,6 +28,7 @@ build/Release
 
 # Build output
 dist
+dist-demo
 
 # Dependency directories
 node_modules
