@@ -5,6 +5,13 @@ import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 
 export default defineConfig({
+	// Dev server consumes the library source directly for instant HMR.
+	resolve: {
+		alias: [
+			{ find: "toastik/style.css", replacement: resolve(__dirname, "src/toasts.css") },
+			{ find: "toastik", replacement: resolve(__dirname, "src/index.ts") },
+		],
+	},
 	plugins: [
 		vue(),
 		tailwindcss(),

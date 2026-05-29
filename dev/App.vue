@@ -1,9 +1,17 @@
 <script lang="ts" setup>
-import { ref } from "vue";
-import { type Position, Toaster, toast } from "../src";
+import { onMounted, ref, watchEffect } from "vue";
+import { type Position, Toaster, toast } from "toastik";
 
 const positions: Position[] = ["topLeft", "topCenter", "topRight", "bottomLeft", "bottomCenter", "bottomRight"];
 const position = ref<Position>("topRight");
+
+const isDark = ref(true);
+onMounted(() => {
+	isDark.value = window.matchMedia("(prefers-color-scheme: dark)").matches;
+});
+watchEffect(() => {
+	document.documentElement.classList.toggle("dark", isDark.value);
+});
 
 function fire(type: "default" | "success" | "error" | "info" | "warning") {
 	const messages = {
@@ -23,11 +31,14 @@ function fire(type: "default" | "success" | "error" | "info" | "warning") {
 	<main class="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 p-10">
 		<h1 class="text-2xl font-bold mb-6">Toastik playground</h1>
 
-		<div class="mb-6 flex flex-wrap items-center gap-2">
+		<div class="mb-6 flex flex-wrap items-center gap-3">
 			<label class="text-sm font-medium">Position:</label>
 			<select v-model="position" class="rounded-md border border-slate-300 dark:border-slate-700 bg-transparent px-2 py-1 text-sm">
 				<option v-for="p in positions" :key="p" :value="p">{{ p }}</option>
 			</select>
+			<button type="button" class="btn-ghost" @click="isDark = !isDark">
+				{{ isDark ? "☀ Light" : "☾ Dark" }}
+			</button>
 		</div>
 
 		<div class="flex flex-wrap gap-3">
@@ -48,5 +59,9 @@ function fire(type: "default" | "success" | "error" | "info" | "warning") {
 .btn {
 	@apply rounded-lg bg-slate-900 text-white px-4 py-2 text-sm font-medium cursor-pointer;
 	@apply hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 transition-colors;
+}
+.btn-ghost {
+	@apply rounded-md border border-slate-300 dark:border-slate-700 px-3 py-1 text-sm font-medium cursor-pointer;
+	@apply hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors;
 }
 </style>
