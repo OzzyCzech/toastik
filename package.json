@@ -1,6 +1,6 @@
 {
 	"name": "toastik",
-	"version": "0.1.0",
+	"version": "0.1.20",
 	"description": "A lightweight, dependency-free toast notification component for Vue 3 with Tailwind 4 styling.",
 	"type": "module",
 	"license": "MIT",
