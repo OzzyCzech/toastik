@@ -1,5 +1,11 @@
 # 🍞 Toastik
 
+[![NPM Downloads](https://img.shields.io/npm/dm/toastik?style=for-the-badge)](https://www.npmjs.com/package/toastik)
+[![NPM Version](https://img.shields.io/npm/v/toastik?style=for-the-badge)](https://www.npmjs.com/package/toastik)
+[![NPM License](https://img.shields.io/npm/l/toastik?style=for-the-badge)](https://github.com/OzzyCzech/toastik/blob/main/LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/OzzyCzech/toastik?style=for-the-badge)](https://github.com/OzzyCzech/toastik/commits/main)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/OzzyCzech/toastik/deploy.yml?style=for-the-badge)](https://github.com/OzzyCzech/toastik/actions)
+
 A lightweight, dependency-free toast notification component for **Vue 3**, styled with **Tailwind CSS 4**.
 Stacked toasts, swipe-to-dismiss, auto-dismiss, six positions, dark mode, and inlined SVG icons — no icon library required.
 
